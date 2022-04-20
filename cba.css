@@ -1,0 +1,550 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800;900&display=swap");
+*{
+  margin: 0;
+  padding:0;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: #f1faee;
+  overflow-x: hidden;
+}
+
+/* burger icon */
+
+.burger {
+  display: inline-block;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+  background-color: white;
+}
+
+.change .bar2 {opacity: 0;   background-color: white;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+    background-color: white;
+}
+
+/* wraper */
+
+
+
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  padding: 10px 20px;  
+  background-image: url(assets/img/header/background-header.jpg);
+}
+
+
+nav .brand a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  font-weight: 550;
+
+}
+
+.bg-sidebar {
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  background: rgba(0,0,0,.1);
+  transition: .3s;
+  visibility: hidden;
+}
+
+.bg-sidebar.change {
+  right: 0;
+  visibility: visible;
+  display: block;
+}
+
+nav ul {
+    display: flex;
+    position: fixed;    
+    background-color:#505050;
+    top: 0;
+    bottom: 0;
+    right: -300px;
+    width: 300px;
+    transition: .5s;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+nav ul.change {
+    right: 0;
+    transition: .5s;
+}
+
+nav ul li {
+  list-style: none;
+  padding: 20px 15px;
+}
+
+nav ul li a {
+  color: #00cc99;
+  font-size: 1.2rem;
+    text-decoration: none;
+}
+
+
+  header{
+  display: grid;
+  grid-template:
+  "judul nav" 1fr "isi isi" 750px  "op op" 
+   100px/1fr 1fr;
+  /* merubah gambar background */
+  background-image: url(assets/img/header/background-header.jpg);
+  /* agar ukuran bisa muat pada background */
+  box-sizing: border-box;
+  background-size:cover;
+  background-position:center;
+  position: relative;
+  width: 100%;
+
+  
+}
+.judul{
+  grid-area: judul;
+}
+.judul img{
+  max-width: 150px;
+  height: 100px;
+  margin-left: 100px;
+}
+
+
+.Isi{
+  grid-area: isi;
+  display: flex; 
+  color: white;
+  justify-content:center ;
+  align-items:center;
+  font-size:100x ;
+  margin: 400px;
+
+}
+/* memasukan class pada template */
+.arahpanah{
+  grid-area: op;
+}
+/* menjalankan keyframe  */
+.arahpanah a i{
+  display: flex;
+  box-sizing: border-box;
+  animation: polo 2s  infinite;
+  justify-content: center;
+  text-decoration: none;
+  list-style: none;
+}
+/* membuat template keyframe */
+@keyframes polo  {
+  0%{
+    color: #e642f5;
+  }
+  50%{
+  color: #f1faee;
+}
+  100%{
+  color: #e642f5;
+}
+}
+
+
+.contrainer-1{ 
+  display: grid;
+  margin: 50px;
+  grid-template-columns: 1fr 1fr ;
+  height: 600px;
+  grid-template-rows: min-content 0.5fr;
+  font-size: 20px;
+  grid-template: 
+  'gnm1   gambar1 ' 
+  'gnm1   gambar1 ' / 1fr 1fr ;
+}
+.gb{
+  grid-area: gnm1;
+  grid-template-rows : 12px;
+  
+}
+
+.tobol{
+  display: flex;
+  width: 200px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  color: aliceblue;
+  align-items: center;
+  justify-content: center;
+}
+/* memasukan class pada grid */
+img{
+  grid-area: gambar1;
+}
+/* mengatur ukuran gambar d html */
+.img1{
+  width: 100px;
+  height:100px;
+  position: relative;
+  bottom:-150px ;
+  right: 20px;
+  
+}
+ .img3{
+  width: 200px;
+  height:100px;
+  position: relative;
+  left: 400px;
+  bottom: -50px;
+ }
+ .img4{
+  width: 100px;
+  height:100px;
+  position: relative;
+  right: 300px;
+  bottom: -460px;
+ }
+ .img5{
+  width: 100px;
+  height:100px;
+  position: relative;
+  bottom:-260px;
+  left:60px;
+  transform: rotate(280deg) ;
+ }
+.gambar{
+  margin: auto;
+  position: relative;
+  width: 600px;
+  height: 500px;
+}
+.contraier-2{
+  display: grid;
+  grid-template:
+  'kelas     kelas  kelas' 
+  'konten1   data1  data2 '  
+  'nama1     nama2  nama3 ' /1fr 1fr 1fr ;
+  width: 100%;
+  height: 700px;
+  background-color: #1d1a2d;
+}
+
+.kelas{
+  grid-area: kelas;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:10px 500px;
+} 
+
+.kelas h2{
+  grid-area: kelas;
+  font-size: 50px;
+  margin: 0 300px;
+}
+.gty1,.gty2,.gty3{
+  width: 400px;
+  height: 400px;
+
+}
+/* memasukan area pada sebuah kontrainer yang di tentukan */
+ .gty1{
+  grid-area: konten1;
+  display: grid;
+  color: aliceblue;
+  
+}
+ .gty2{
+  grid-area: data1 ;
+  display:grid;
+  color: aliceblue;
+}
+.data2, .gty3{
+  grid-area: data2;
+  color: aliceblue;
+}
+.nama1{
+grid-area: nama1;
+color: white;
+}
+.nama2{
+grid-area: nama2;
+color: white;
+padding: 10px;
+}
+
+.tobol2{
+  grid-area: nama2;
+  display: flex;
+  width: 110px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  background-color: #6600ff;
+  margin:auto;
+  border-radius: 10px ;
+}
+.contraier-2 a{
+  text-decoration: none;
+  color: white;
+}
+/* membuat template grid pada html */
+.contrainer-3{
+  display: grid;
+  grid-template: 
+  "img1  isi-1 " /1fr 1fr;
+  width: 100%;
+  height: 500px;
+}
+/* mengubah tampilan gambar pada html */
+.contrainer-3,.gambar-3{
+  grid-area: img1;
+  width: 100%;
+  height: 200px;
+  
+}
+.gambar-3  img{
+  grid-area: img1;
+  width: 350px; 
+  height: 150px; 
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5fr 5fr;
+   
+  margin: 10px 30px;
+  border:  10px solid black;
+  box-sizing: border-box;
+  
+}
+
+.isi-1{
+  grid: isi-1;
+  margin: 10px 50px;
+  display: block;
+  width: 500px;
+  height: 500px;
+  font-size: 30px;
+}
+.kontra .anakpanah{
+  display: none;
+  position: fixed;
+  width: 50px;
+  fill: red;
+  z-index: 99999999;
+  bottom: 50px;
+  right: 100px;
+  cursor: pointer;
+}
+/* memberikan isi pada h2 didalam kelas  */
+.isi-1 h2{
+  color: red;
+  padding-top: 120px;
+}
+/* memberikan isi pada p dalam kelas isi */
+.isi-1 p{
+  font-weight: bold;
+  font-style: italic;
+  text-align: justify;
+}
+/* membuat template pada kontrainer  */
+ .kontak{
+  width: 200%;
+  height: 600px;
+  display: grid;
+  background-color: #1d1a2d;
+  grid-template: 'map link ' /0.5fr 1fr;
+  color: white;
+ }
+
+ /* mengatur map pada html */
+ iframe{
+  grid-area:map;
+  width: 500px;
+  height: 300px ;
+  padding-top: 50px;
+  margin-left: 100px;
+  display: block;
+  font-size: 20px;
+}
+
+ 
+.map a i{
+  font-size: 20px;
+  justify-items: center;
+  padding-top: 30px;
+  padding-left: 100px;
+  padding-right: 10px;
+  /* margin-left: 30px; */
+  /* max-width: 5px; */
+  justify-items: center;
+  color: white;  
+}
+.map a i:hover{
+  color: blue;
+}
+
+.link{
+  grid-area: link;
+  color: white;
+  width: 400px;
+  height: 600px;
+}
+/* mengatur warna pada a(link) */
+.link tr td a{
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 20px;
+}
+/* mengubah warna dan mengatur tulisan pada kelas link dalam h1 */
+.link tr td h1{
+  color: red;
+  padding-top: 100px;
+  padding-right: 100px;
+  box-sizing:border-box;
+  font-size: 40px;
+  text-align: justify;
+  justify-items: right;
+}
+/* mengatur sebuah table dalam pengisian */
+tr td {
+  justify-content: space-between ;
+  padding: 20px;
+  font-size: 1em;
+}
+tr td a:hover{
+  transition: all 1s;
+  color: rgb(221, 95, 81); 
+}
+.kontra{
+  display:grid;
+  grid-template: "area 1 area 1 area 2";
+  width: 200%;
+  height: 20vh;
+}
+.anakpanah .panah.scroll-active {
+  display: block;
+}
+.kontra .panah{
+  width: 370px;
+  color: red;
+  grid-area: area 2;
+  position: fixed;
+  right: -240px;
+  bottom: 100px;
+}
+.fa-solid, .fas {
+  font-family: "font awesome 6 free";
+  font-weight: 900;
+}
+.fa-3x{
+  font-size: 3em;
+}
+
+  
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background: #00cc99;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #6600ff;
+  border-radius: 50px;
+}
+
+
+@media screen and (min-width: 960px) {
+
+  .bg-sidebar.change {
+   right: 0;
+    visibility: hidden;
+   display: none;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  nav ul {
+    display: flex;
+      position: relative;    
+      background-color:unset;
+      top: unset;
+      bottom: unset;
+      right: unset;
+      width: unset;
+      flex-direction: row;
+  }
+
+  nav ul li {
+    padding: 10px 15px;
+
+  }
+
+  nav ul li:hover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    transition: .3s;
+    background-color: black;
+    transform: translateY(20px);
+  }
+
+
+  nav ul li a {
+    color: white;
+    font-size: 1.1rem;
+  }
+
+  nav ul li:last-child {
+    font-weight: 550;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .container-flex {
+   width: 100%;
+   max-width: 1024px;
+   margin: auto;
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+}
